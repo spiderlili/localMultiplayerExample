@@ -7,6 +7,11 @@ public class PlayerSetup : NetworkBehaviour {
 
 	[SyncVar(hook="UpdateColor")]
 	public Color m_playerColor;
+	
+	//make sure the text label only shows up for the local player
+	//reserve string variables(public text for player name) 
+	//change the prefab so the text element is populating the m_playerNameText field
+	//when the client connects: local player will be renamed to base name + m_playerNum
 	public string m_basename = "PLAYER";
 
 	[SyncVar(hook="UpdateName")]
@@ -23,6 +28,7 @@ public class PlayerSetup : NetworkBehaviour {
 		}
 	}
 
+//disable the text by default when the client connects - all non-local-player tanks show nothing
 	public override void OnStartClient ()
 	{
 		base.OnStartClient ();

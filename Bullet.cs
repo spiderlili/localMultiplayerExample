@@ -6,6 +6,9 @@ using System.Linq;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
+
+//add rocket glow particle system for the trail
+
 public class Bullet : NetworkBehaviour 
 {
 	Rigidbody m_rigidbody;
